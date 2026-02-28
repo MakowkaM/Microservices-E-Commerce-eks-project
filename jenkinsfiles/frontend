@@ -54,6 +54,9 @@ pipeline {
                         sh '''
                             git config user.email "${GIT_EMAIL}"
                             git config user.name "${GIT_USER_NAME}"
+
+                            git pull origin master --rebase
+
                             BUILD_NUMBER=${BUILD_NUMBER}
                             echo $BUILD_NUMBER
 
